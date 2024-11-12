@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <!--Preloading fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Commissioner:slnt,wght,FLAR,VOLM@-12..0,100..900,0..100,0..100&display=swap"
+        rel="stylesheet" />
+
+
+    <!-- Tailwind CSS-->
+    <link rel="stylesheet" href="../styles/output.css">
+
+    <title>Hamburgues </title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="w-full h-[350px] bg-zinc-900  bg-home bg-cover bg-center relative">
+        <div class=" absolute inset-0 bg-black/70 z-0">
+            <div class="w-full h-full flex flex-col justify-center items-center z-10">
+                <img src="../assets/logo-good-burguer.jpeg" alt="Logo da lanchonete"
+                    class="w-32 h-32  rounded-full shadow-lg hover:scale-110 duration-200" loading="lazy" />
+                <h1 class="text-4xl mt-4 mb-2 font-bold text-yellow-400">Good Burguer</h1>
+                <span class="text-white font-medium">Endereço da empresa</span>
+
+                <div class="bg-green-600 mt-4 px-4 py-1 rounded-lg">
+                    <span class="text-center text-white font-medium">
+                        Horário de funcionamentp
+                    </span>
+
+                </div>
+                <div id="store-status" class="flex items-center mt-4 px-4 py-1 rounded-lg">
+                    <div id="status-circle" class="w-4 h-4 rounded-full mr-2"></div>
+                    <span id="status-text" class="text-center text-white font-medium">
+                        Status Restaurante
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTÃO VOLTAR À TELA INICIAL NO TOPO DIREITO -->
+        <a href="../index.html"
+            class="absolute top-4 right-4 bg-yellow-500 text-zinc-900 py-2 px-2 rounded-full hover:bg-yellow-400 transition-colors flex items-center">
+            <span class="material-symbols-outlined">
+                <img src="../assets/arrow_back.svg" alt="card-add" class="w-7 h-7 items-center">
+            </span>
+        </a>
+        <!-- FIM BOTÃO VOLTAR À TELA INICIAL NO TOPO DIREITO -->
+    </header>
+    <!-- FIM HEADER -->
+
+    <div class=" mx-auto  max-w-7xl px-2 my-2">
+        <h2 class="font-bold text-3xl text-center mb-10">Hamburgues Artesanais</h2>
+    </div>
+
+    <!-- INICIO MENU-->
+    <div id="menu" class="m2">
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16">
+            <!-- PRODUTO ITEM -->
+            <div class="flex gap-2">
+                <img src="../assets/hm-simples.jpeg" alt=""
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+
+                <div class="flex-auto">
+                    <p class="font-bold">Hamburguer Simples</p>
+                    <p class="text-sm">Pão de fermentação natural de trigo, Carne bovina, Alface e Tomate</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 6.50</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="Hamburquer Simples" data-price="6.50">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM -->
+
+            <!-- PRODUTO ITEM -->
+            <div class="flex gap-2">
+                <img src="../assets/queijo-quente.webp" alt=""
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+
+                <div class="flex-auto">
+                    <p class="font-bold">Queijo Quente</p>
+                    <p class="text-sm">Pão de fermentação natural de trigo, mussarela, alface e tomate</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 7.00</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="Queijo Quente" data-price="7.00">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM -->
+
+            <!-- PRODUTO ITEM -->
+            <div class="flex gap-2">
+                <img src="../assets/egg.webp" alt=""
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+
+                <div class="flex-auto">
+                    <p class="font-bold">EEG</p>
+                    <p class="text-sm">Pão de fermentação natural de trigo, ovo, mussarela, alface e tomate</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 7.00</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="Burguer EEG" data-price="7.00">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM -->
+
+            <!-- PRODUTO ITEM -->
+            <div class="flex gap-2">
+                <img src="../assets/misto.webp" alt=""
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+
+                <div class="flex-auto">
+                    <p class="font-bold">Misto</p>
+                    <p class="text-sm">Pão de fermentação natural de trigo, presunto, mussarela, alface e tomate</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 7.50</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="Misto" data-price="7.50">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM -->
+
+            <!-- PRODUTO ITEM -->
+            <div class="flex gap-2">
+                <img src="../assets/x-urguer.webp" alt=""
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+
+                <div class="flex-auto">
+                    <p class="font-bold">X - Burguer</p>
+                    <p class="text-sm">Pão de fermento natural de trigo, carne bovina, mussarela, alface e tomate</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 8.50</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="X - Burguer" data-price="7.50">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM -->
+
+            <!-- PRODUTO ITEM -->
+            <div class="flex gap-2">
+                <img src="../assets/hamburque.webp" alt=""
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+
+                <div class="flex-auto">
+                    <p class="font-bold">Hamburquer</p>
+                    <p class="text-sm">Pão de fermento natural de trigo, carne bovina, presunto, mussarela, alface e
+                        tomate</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 8.50</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="Hamgurguer" data-price="7.50">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM -->
+
+            <!-- PRODUTO ITEM -->
+            <div class="flex gap-2">
+                <img src="../assets/americano.webp" alt="Local da lanchonetee"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+
+                <div class="flex-auto">
+                    <p class="font-bold">Americano</p>
+                    <p class="text-sm">Pão de fermento natural de trigo, carne bovina, presunto, mussarela, alface e
+                        tomate</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 8.50</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="Americano" data-price="8.50">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM -->
+
+            <!-- PRODUTO ITEM -->
+            <div class="flex gap-2">
+                <img src="../assets/egg-salsicha.webp" alt=""
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+
+                <div class="flex-auto">
+                    <p class="font-bold">EGG Burguer com Salsicha</p>
+                    <p class="text-sm">Pão de fermentação natural de trigo, carne bovina, ovo, mussarela, salsicha,
+                        alface e tomate</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 9.50</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="EEG Burguer com Salsicha" data-price="9.50">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM -->
+
+            <!-- x-egg burguer -->
+            <div class="flex gap-2">
+                <img src="../assets/x-egg-burguer.webp" alt="x-egg burguer"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+                <div class="flex-auto">
+                    <p class="font-bold">X-Egg Burguer</p>
+                    <p class="text-sm">Pão, carne, ovo, mussarela, presunto, alface e tomate</p>
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 9,50</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="X-Egg Burguer" data-price="9.50">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM x-egg burguer -->
+
+            <!-- Bacon com salsicha -->
+            <div class="flex gap-2">
+                <img src="../assets/bancon-com-salsich.webp" alt="Bacon com Salsicha"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+                <div class="flex-auto">
+                    <p class="font-bold">Bacon com Salsicha</p>
+                    <p class="text-sm">Pão, bacon, salsicha, mussarela, alface e tomate</p>
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 9,50</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="Bacon com Salsicha" data-price="9.50">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM Bacon com salsicha -->
+
+            <!-- x-salada -->
+            <div class="flex gap-2">
+                <img src="../assets/x-salada.webp" alt="x-salada"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+                <div class="flex-auto">
+                    <p class="font-bold">X-Salada</p>
+                    <p class="text-sm">Pão, carne, mussarela, milho, pimentão, cebola, alface e tomate</p>
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 9,50</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="X-Salada" data-price="9.50">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM x-salada -->
+
+            <!-- FRAN-salada -->
+            <div class="flex gap-2">
+                <img src="../assets/fran-salada.webp" alt="FRAN-salada"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+                <div class="flex-auto">
+                    <p class="font-bold">FRAN - Salada</p>
+                    <p class="text-sm">Pão com frango, mussarela, milho, pimentão, cebola, alface e tomate</p>
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 11,00</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="FRAN - Salada" data-price="11.00">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM FRAN-salada -->
+
+            <!-- x-calabresa -->
+            <div class="flex gap-2">
+                <img src="../assets/x-calabresa.webp" alt="x-calabresa"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+                <div class="flex-auto">
+                    <p class="font-bold">X-Calabresa</p>
+                    <p class="text-sm">Pão, carne calabresa, mussarela, alface e tomate</p>
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 11,00</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="X-Calabresa" data-price="11.00">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM x-calabresa -->
+
+            <!-- x-egg calabresa -->
+            <div class="flex gap-2">
+                <img src="../assets/x-egg-calabresa.webp" alt="x-egg calabresa"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+                <div class="flex-auto">
+                    <p class="font-bold">X-Egg Calabresa</p>
+                    <p class="text-sm">Pão, carne, calabresa, ovo, mussarela, alface e tomate</p>
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 11,50</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="X-Egg Calabresa" data-price="11.50">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM x-egg calabresa -->
+
+            
+
+        </main>
+    </div>
+
+
+
+    <div class=" mx-auto  max-w-7xl px-2 my-2">
+        <h2 class="font-bold text-3xl text-center mb-10">Hamburgues Industriais</h2>
+    </div>
+
+    <!-- INICIO MENU-->
+    <div id="menu" class="m2">
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16">
+            <!-- PRODUTO ITEM -->
+            <div class="flex gap-2">
+                <img src="../assets/hm-simples.jpeg" alt=""
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+
+                <div class="flex-auto">
+                    <p class="font-bold">Hamburguer Simples</p>
+                    <p class="text-sm">Pão de fermentação natural de trigo, Carne bovina, Alface e Tomate</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 6.50</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="Hamburquer Simples" data-price="6.50">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM -->
+
+            
+
+            <!-- Bacon com salsicha -->
+            <div class="flex gap-2">
+                <img src="../assets/bancon-com-salsich.webp" alt="Bacon com Salsicha"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+                <div class="flex-auto">
+                    <p class="font-bold">Bacon com Salsicha</p>
+                    <p class="text-sm">Pão, bacon, salsicha, mussarela, alface e tomate</p>
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 9,50</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="Bacon com Salsicha" data-price="9.50">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM Bacon com salsicha -->
+
+            <!-- x-salada -->
+            <div class="flex gap-2">
+                <img src="../assets/x-salada.webp" alt="x-salada"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+                <div class="flex-auto">
+                    <p class="font-bold">X-Salada</p>
+                    <p class="text-sm">Pão, carne, mussarela, milho, pimentão, cebola, alface e tomate</p>
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 9,50</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="X-Salada" data-price="9.50">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM x-salada -->
+
+            <!-- FRAN-salada -->
+            <div class="flex gap-2">
+                <img src="../assets/fran-salada.webp" alt="FRAN-salada"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+                <div class="flex-auto">
+                    <p class="font-bold">FRAN - Salada</p>
+                    <p class="text-sm">Pão com frango, mussarela, milho, pimentão, cebola, alface e tomate</p>
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 11,00</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="FRAN - Salada" data-price="11.00">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM FRAN-salada -->
+
+            <!-- x-calabresa -->
+            <div class="flex gap-2">
+                <img src="../assets/x-calabresa.webp" alt="x-calabresa"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+                <div class="flex-auto">
+                    <p class="font-bold">X-Calabresa</p>
+                    <p class="text-sm">Pão, carne calabresa, mussarela, alface e tomate</p>
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 11,00</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="X-Calabresa" data-price="11.00">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM x-calabresa -->
+
+            <!-- x-egg calabresa -->
+            <div class="flex gap-2">
+                <img src="../assets/x-egg-calabresa.webp" alt="x-egg calabresa"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+                <div class="flex-auto">
+                    <p class="font-bold">X-Egg Calabresa</p>
+                    <p class="text-sm">Pão, carne, calabresa, ovo, mussarela, alface e tomate</p>
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 11,50</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="X-Egg Calabresa" data-price="11.50">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM x-egg calabresa -->
+
+            <!-- x-bacon -->
+            <div class="flex gap-2">
+                <img src="../assets/x-bacon.webp" alt="x-bacon"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+                <div class="flex-auto">
+                    <p class="font-bold">X-Bacon</p>
+                    <p class="text-sm">Pão, carne, bacon, mussarela, alface e tomate</p>
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 11,50</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="X-Bacon" data-price="11.50">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM x-bacon -->
+
+            <!-- X - Bunito -->
+            <div class="flex gap-2">
+                <img src="../assets/x-bunito.webp" alt="Fran-bacon"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+                <div class="flex-auto">
+                    <p class="font-bold">X - Bunito</p>
+                    <p class="text-sm">Pão, frango, carne, mussarela, bacon, calabresa, salsicha, alface e tomate</p>
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 12,50</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto"
+                            data-name="X - Bunito" data-price="12.50">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM X - Bunito -->
+
+        </main>
+    </div>
+
+    <!-- FIM INICIO MENU-->
+
+
+    <!-- MODAL CARD -->
+    <div class="bg-black/70 w-full h-full fixed top-0 left-0 z-[99] hidden items-center justify-center modal-content"
+        id="cart-modal">
+        <div class="bg-orange-400 p-5 rounded-md min-w-[90%] md:min-w-[600px] max-h-[90vh] overflow-auto">
+            <h2 class="font-bold text-center text-2xl mb-2">Meu carrinho</h2>
+
+            <div id="cart-items" class="flex justify-between mb-2 flex-col max-h-[300px] overflow-y-auto"></div>
+
+            <p class="font-bold">Total: <span id="cart-total">R$ 0.00</span></p>
+
+            <!-- Nova Seleção: Forma de Retirada -->
+            <p class="font-bold mt-4">Forma de Retirada:</p>
+            <select id="order-type" class="w-full border-2 p-1 rounded my-1 bg-orange-100">
+                <option value="retirada">Retirada na Lanchonete</option>
+                <option value="entrega">Delivery</option>
+            </select>
+
+            <!-- Campos de Endereço (escondidos por padrão) -->
+            <div id="delivery-address" class="hidden">
+                <p class="font-bold mt-4">Endereço de Entrega:</p>
+
+                <input type="text" placeholder="Número" id="address-number" class="w-full border-2 p-1 rounded my-1 bg-orange-100 placeholder-black" />
+                <input type="text" placeholder="Rua" id="address-street" class="w-full border-2 p-1 rounded my-1 bg-orange-100 placeholder-black" />
+                <select id="bairro" class="w-full border-2 p-1 rounded my-1 bg-orange-100 placeholder-black" onchange="atualizarFrete()">
+                    <option value="" selected disabled>Selecione o bairro</option>
+                    <option value="Centro">Centro - R$ 2,00</option>
+                    <option value="Novo Horizonte">Jardins - R$ 4,00</option>
+                    <option value="Pitombeira">Zona Sul - R$ 6,00</option>
+                    <option value="Boi Morto">Zona Norte - R$ 8,00</option>
+                </select>
+                <input type="text" placeholder="Cidade" id="address-city" class="w-full border-2 p-1 rounded my-1 bg-orange-100 placeholder-black" />
+            </div>
+
+            <p class="font-bold mt-4">Nome:</p>
+            <input type="text" placeholder="Digite seu nome" id="name"
+                class="w-full border-2 p-1 rounded my-1 bg-orange-100 placeholder-black" />
+
+            <p class="font-bold mt-4">Forma de Pagamento:</p>
+            <select id="payment-method" class="w-full border-2 p-1 rounded my-1 bg-orange-100">
+                <option value="A vista">A Vista</option>
+                <option value="Cartão de crédito">Cartão de Crédito ou Debito</option>
+                <option value="Pix">Pix</option>
+            </select>
+
+            <p class="font-bold mt-4">Detalhes Adicionais:</p>
+            <textarea placeholder="Digite detalhes adicionais" id="additional-info"
+                class="w-full border-2 p-1 rounded my-1 bg-orange-100 placeholder-black"></textarea>
+
+            <div class="flex items-center justify-between mt-5 w-full">
+                <button id="closed-model-btn" class="bg-red-600 text-white px-4 py-1 rounded">
+                    Fechar
+                </button>
+                <button id="checkout-btn" class="bg-green-600 text-white px-4 py-1 rounded">
+                    Finalizar pedido
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--FIM MODAL CARD-->
+
+
+
+    <!--BUTTON CART FOOTER-->
+    <footer
+        class="w-full bg-red-500 py-3 fixed bottom-0 z-40 flex items-center justify-center transition-footer footer-hidden"
+        id="cart-footer">
+        <button class="text-white flex items-center gap-2 font-bold" id="cart-btn">
+            (<span id="cart-count" class="">0</span>)
+            Meu carrinho
+            <span class="material-symbols-outlined text-lg text-white">
+                <img src="../assets/add_shopping.svg" alt="card_store" class="w-6 h-6">
+            </span>
+        </button>
+    </footer>
+    <!--FIM BUTTON CART FOOTER-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="../scripts/statusStore.js"></script>
+    <script src="../scripts/orderCart.js"></script>
+</body>
+
+</html>
